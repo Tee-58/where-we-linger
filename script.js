@@ -1,8 +1,1 @@
-const toggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav');
-toggle?.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const modal=document.querySelector('.search-modal');
-document.querySelector('.search-btn')?.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('input').focus(),50)});
-document.querySelector('.close-search')?.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
-modal?.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}});
+const menu=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));const layer=document.querySelector('.search-layer');document.querySelector('.search-open')?.addEventListener('click',()=>{layer.classList.add('open');layer.setAttribute('aria-hidden','false');layer.querySelector('input').focus()});document.querySelector('.search-close')?.addEventListener('click',()=>{layer.classList.remove('open');layer.setAttribute('aria-hidden','true')});layer?.addEventListener('click',e=>{if(e.target===layer){layer.classList.remove('open');layer.setAttribute('aria-hidden','true')}});document.querySelector('#subscribe')?.addEventListener('submit',e=>{e.preventDefault();e.currentTarget.querySelector('.form-message').textContent='Thank you — you’re on the list.';});
